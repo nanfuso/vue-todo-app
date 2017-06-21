@@ -1,0 +1,13 @@
+<div id="app">
+<h2>Today's Tasks</h2>
+    <ul v-for=" task in tasks ">
+        <li v-on:click="toggleComplete(task)" v-bind:class="{complete: task.completed}"> 
+        {{ task.text }} 
+        </li>
+    </ul>
+    <div>
+    <input type="text" v-model="newTaskText">
+    <button v-on:click="addTask()">Add New Task</button>
+    </div>
+    <h4>Incomplete Tasks: {{ tasks.length }}</h4>
+</div>
